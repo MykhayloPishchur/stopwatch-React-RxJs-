@@ -53,7 +53,7 @@ function App() {
     const doubleClick$ = click$.pipe(
       buffer(click$.pipe(debounceTime(300))),
       map(clicks => clicks.length),
-      filter(clicksLength => clicksLength >= 2),
+      filter(clicksLength => clicksLength >= 1),
     );
     doubleClick$.subscribe(() => {
       console.log('Double Click!!!');
